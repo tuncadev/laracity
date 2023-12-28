@@ -1,3 +1,4 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine on RewriteRule ^$ public/ [L] RewriteRule ((?s).*) /$1 [L]
+    RewriteEngine on RewriteRule ^$ public/ [L] RewriteRule ((?s).*) public/$1
+    [L]
 </IfModule>
