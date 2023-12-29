@@ -53,14 +53,15 @@ class UserController extends Controller
 
     // Authenticate User
     public function authenticate(Request $request) {
+			$remember = $request->has('remember') ? true : false;
         $formFields = $request->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
-        ]);
+        ]
+			);
 
-        if(auth()->attempt($formFields)) {
-            $request->session()->regenerate();
-
+        if(auth()->attempt($formFields, $remember)) {
+            //$request->session()->regenerate();
             return redirect()->back()->with('success', 
 						__('messages.flash-messages.greetings.welcome') . ", " . 
 						Auth::user()->name . " ! " . 
