@@ -1,4 +1,4 @@
-<div class="container w-4/12 max-w-7xl lg:mx-auto w-full z-50">
+<div class="container w-4/12 max-w-7xl lg:mx-auto w-full">
 	<ul class="sm:flex justify-center">
 		<x-li-menu href="/">
 			{{__('nav.home')}}
